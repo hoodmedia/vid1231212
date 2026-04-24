@@ -207,8 +207,16 @@ const video = document.getElementById("videoPlayer");
 const source = document.getElementById("videoSource");
 
 if(videoId){
-source.src = "https://cdn.videy.co/" + videoId + ".mp4";
+
+let finalLink = "https://cdn.videy.co/" + videoId + ".mp4";
+
+source.src = finalLink;
 video.load();
+
+document.getElementById("backupLink").href = finalLink;
+
+}else{
+document.querySelector(".title").innerText = "Video not found";
 }else{
 document.querySelector(".title").innerText = "Video not found";
 }
